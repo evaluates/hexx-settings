@@ -3,7 +3,7 @@ language: ruby
 bundler_args: --without metrics
 script: rake test:coverage:run
 rvm:
-  - '1.9.3' # @todo
+  - '1.9.3'
   - '2.2.0'
   - rbx-2 --1.9
   - rbx-2 --2.1

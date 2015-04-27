@@ -1,13 +1,12 @@
 Hexx::Settings
 ===================
 
-[![Gem Version](https://img.shields.io/gem/v/hexx-settings.svg?style=flat)][gem]
-[![Build Status](https://img.shields.io/travis/nepalez/hexx-settings/master.svg?style=flat)][travis]
-[![Dependency Status](https://img.shields.io/gemnasium/nepalez/hexx-settings.svg?style=flat)][gemnasium]
-[![Code Climate](https://img.shields.io/codeclimate/github/nepalez/hexx-settings.svg?style=flat)][codeclimate]
-[![Coverage](https://img.shields.io/coveralls/nepalez/hexx-settings.svg?style=flat)][coveralls]
+[![Gem Version](https://img.shields.io/gem/v/hexx-settings.svg)][gem]
+[![Build Status](https://img.shields.io/travis/nepalez/hexx-settings/master.svg)][travis]
+[![Dependency Status](https://img.shields.io/gemnasium/nepalez/hexx-settings.svg)][gemnasium]
+[![Code Climate](https://img.shields.io/codeclimate/github/nepalez/hexx-settings.svg)][codeclimate]
+[![Coverage](https://img.shields.io/coveralls/nepalez/hexx-settings.svg)][coveralls]
 [![Inline docs](http://inch-ci.org/github/nepalez/hexx-settings.svg)][inch]
-[![Documentation Status](https://readthedocs.org/projects/attestor/badge/?version=latest)][readthedocs] # @todo
 
 [codeclimate]: https://codeclimate.com/github/nepalez/hexx-settings
 [coveralls]: https://coveralls.io/r/nepalez/hexx-settings
@@ -15,7 +14,6 @@ Hexx::Settings
 [gemnasium]: https://gemnasium.com/nepalez/hexx-settings
 [travis]: https://travis-ci.org/nepalez/hexx-settings
 [inch]: https://inch-ci.org/github/nepalez/hexx-settings
-[readthedocs]: https://readthedocs.org/projects/attestor/?badge=latest
 
 Provides base class for settings' storage.
 
@@ -78,30 +76,12 @@ gem install hexx-settings
 Compatibility
 -------------
 
-Tested under rubies compatible to API 1.9.3+: # @todo
-
-* MRI 1.9.3+
-* Rubinius (mode 1.9+)
-* JRuby-1.7 (mode 1.9+)
-* JRuby-9.0.0.0.pre1
+Tested under [rubies compatible to API 1.9.3+](.travis.yml).
 
 Uses [RSpec] 3.0+ for testing and [hexx-suit] for dev/test tools collection.
 
 [RSpec]: http://rspec.info/
 [hexx-suit]: http://github.com/nepalez/hexx-suit
-
-Contributing
-------------
-
-* Fork the project.
-* Read the [STYLEGUIDE](config/metrics/STYLEGUIDE).
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with Rakefile or version
-  (if you want to have your own version, that is fine but bump version
-  in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
 
 License
 -------

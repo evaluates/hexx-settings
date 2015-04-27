@@ -23,7 +23,7 @@ Style/AsciiComments:
   Enabled: false
 
 Style/ClassAndModuleChildren:
-  Enabled: false # @todo
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

@@ -1,6 +1,5 @@
 # encoding: utf-8
 
-# @todo
 guard :rspec, cmd: "bundle exec rspec" do
 
   watch(%r{^spec/.+_spec.rb$})
