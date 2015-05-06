@@ -49,6 +49,16 @@ MyGem::Settings.instance.foo # => :bar
 MyGem::Settings[:foo]        # => :bar
 ```
 
+It also provides the class method `.initialize_from` to try loading
+settings from given initializer:
+
+```ruby
+MyGem::Settings.initialize_from "my_module", at: ENV["PATH_TO_INITIALIZERS"]
+```
+
+The method doesn't fail when the initializer hasn't been found, but instead
+warns the user.
+
 [singleton instance]: http://ruby-doc.org/stdlib-1.9.3/libdoc/singleton/rdoc/Singleton.html
 
 Installation

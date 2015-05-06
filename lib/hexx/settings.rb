@@ -46,6 +46,30 @@ module Hexx
       instance.public_send setting
     end
 
+    # Tries to load given initializer
+    #
+    # @example
+    #   Settings.initialize_from "my_module", at: ENV["PATH_TO_INITIALIZER"]
+    #
+    # @param [#to_s] filename
+    #   The name of the initializer file to be loaded
+    #
+    # @option [#to_s] :at
+    #   The absolute path to the initializers directory
+    #
+    # @return [undefined]
+    #
+    def self.initialize_from(filename, at: nil)
+      if at
+        require File.join at, filename
+      else
+        warn "You should provide the path to initializers"
+      end
+    rescue LoadError
+      filename << ".rb" unless filename[/\.rb$/]
+      warn "You should provide the '#{ filename }' initializer"
+    end
+
   end # class Settings
 
 end # module Hexx

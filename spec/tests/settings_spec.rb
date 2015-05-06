@@ -77,4 +77,60 @@ describe Hexx::Settings do
 
   end # describe []
 
+  describe ".initialize_from" do
+
+    before { $stderr = StringIO.new }
+    after  { $stderr = STDERR       }
+
+    context "with unexisting path to intializers" do
+
+      subject { klass.initialize_from "baz", at: "foo/bar" }
+
+      it "tries to load the initializer" do
+        expect(klass).to receive(:require).with "foo/bar/baz"
+        subject
+      end
+
+      it "doesn't fail" do
+        expect { subject }.not_to raise_error
+      end
+
+      it "issues a warning" do
+        expect { subject }
+          .to change { $stderr.string }
+          .to "You should provide the 'baz.rb' initializer\n"
+      end
+
+    end # context
+
+    context "when file has an extension" do
+
+      subject { klass.initialize_from "baz.rb", at: "foo/bar" }
+
+      it "issues a proper warning" do
+        expect { subject }
+          .to change { $stderr.string }
+          .to "You should provide the 'baz.rb' initializer\n"
+      end
+
+    end # context
+
+    context "without path to initializers" do
+
+      subject { klass.initialize_from "baz" }
+
+      it "doesn't fail" do
+        expect { subject }.not_to raise_error
+      end
+
+      it "issues a warning" do
+        expect { subject }
+          .to change { $stderr.string }
+          .to "You should provide the path to initializers\n"
+      end
+
+    end # context
+
+  end # describe .initialize_from
+
 end # describe Hexx::Settings
