@@ -5,7 +5,7 @@ guard :rspec, cmd: "bundle exec rspec" do
   watch(%r{^spec/.+_spec.rb$})
 
   watch(%r{^lib/hexx(.+)\.rb$}) do |m|
-    "spec/tests#{ m[1] }_spec.rb"
+    "spec/unit#{ m[1] }_spec.rb"
   end
 
   watch("lib/hexx-settings.rb") { "spec" }
