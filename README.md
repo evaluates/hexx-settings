@@ -35,29 +35,44 @@ end # module MyGem
 
 The class provides a [singleton instance] to store settings in.
 
-Class `Settings` predefines `configure` and `[]` class methods.
-The first one yields the block with the instance of its own, the second
-is a shortcut to the instance methods.
+### configure
+
+The class method `.configure` yields the block with access to its configurable
+singleton instance:
 
 ```ruby
 MyGem::Settings.configure do |config|
   config.foo = :bar
 end
-
-MyGem::Settings.instance.foo # => :bar
-# this is the same as above:
-MyGem::Settings[:foo]        # => :bar
 ```
 
-It also provides the class method `.initialize_from` to try loading
-settings from given initializer:
+### []
+
+The class method `[]` is a shortcut to the instance variable:
+
+```ruby
+MyGem::Settings[:foo] # => :bar
+```
+
+### initialize_from
+
+The class method `.initialize_from` to load settings from given initializer:
 
 ```ruby
 MyGem::Settings.initialize_from "my_module", at: ENV["PATH_TO_INITIALIZERS"]
 ```
 
-The method doesn't fail when the initializer hasn't been found, but instead
-warns the user.
+The method doesn't fail when the initializer hasn't been found,
+but only warns the user.
+
+### reset
+
+The class method `.reset` clears all settings
+
+```ruby
+MyGem::Settings.reset
+MyGem::Settings[:foo] # => nil
+```
 
 [singleton instance]: http://ruby-doc.org/stdlib-1.9.3/libdoc/singleton/rdoc/Singleton.html
 

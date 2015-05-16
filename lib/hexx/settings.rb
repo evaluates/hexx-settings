@@ -70,6 +70,16 @@ module Hexx
       warn "You should provide the '#{ filename }' initializer"
     end
 
+    # Resets all settings
+    #
+    # @return [undefined]
+    #
+    def self.reset
+      instance.instance_variables.each do |variable|
+        instance.instance_variable_set variable, nil
+      end
+    end
+
   end # class Settings
 
 end # module Hexx

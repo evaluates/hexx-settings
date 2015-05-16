@@ -133,4 +133,15 @@ describe Hexx::Settings do
 
   end # describe .initialize_from
 
+  describe ".reset" do
+
+    before  { instance.foo = "foo" }
+    subject { klass.reset         }
+
+    it "resets settings" do
+      expect { subject }.to change { klass[:foo] }.from("foo").to nil
+    end
+
+  end # describe .reset
+
 end # describe Hexx::Settings
